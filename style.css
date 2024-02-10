@@ -334,6 +334,44 @@ li.active{
     padding: 5px 20px;
     border-radius: 10px;
 }
+@media screen and   (max-width: 320px){
+       .main-container{
+        background: red;
+    }
+    .input-feilds{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       justify-content: center;
+    }
+    .notifications{
+        display: flex;
+        align-items: center;
+        margin: 0 0 5px 0;
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .functional-btns{
+     
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .stored-passwords, .deleted-passwords, .card-passwords {
+        position: absolute;
+        background: hsl(0, 4%, 25%);
+        padding: 10px;
+        width: 250px;
+        border-radius: 10px;
+        height: 250px;
+        display: none;
+    
+    }
+}
+
+
 
 @media  screen and (min-width:499px) {
 
@@ -376,6 +414,7 @@ li.active{
 
     
 }
+
 
 @media  screen and (min-width:768px) {
 /* 
