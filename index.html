@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password application</title>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="heading-info">
+            <h1>My password app</h1>
+            <p>You can keep your password dont lose your information</p>
+        </div>
+
+        <div class="input-feilds">
+            <div class="card">
+                <label for="siteaddress">Site/device:</label>
+                <input type="text" id="siteAddress">
+            </div>
+            <div class="card">
+                <label for="password">password:</label>
+                <input type="text" id="passwords">
+            </div>
+            <div class="card">
+                <label for="category">Catagory</label>
+            <select   id="category">
+                <option value="">Select</option>
+                <option value="site">Site</option>
+                <option value="card">Card</option>
+                <option value="device">Device</option>
+            </select>
+            </div>
+
+            <button id="add">Add</button>
+        </div>
+        
+        <div class="notifications">
+            <p>Stored: <span class="stored">0</span></p>
+            <p>Deleted: <span class="deleted">0</span></p>
+            <p>New: <span class="new">0</span></p>
+            <p>Card: <span class="cards">0</span></p>
+        </div>
+
+        <div class="functional-btns">
+            <button class="btn" id="stored">Check stored password</button>
+            <button class="btn" id="deleted">Check deleted password</button>
+            <button class="btn" id="cardimfo">Digital card information</button>
+            <button class="btn" id="cardimfo">^^</button>
+        </div>
+
+
+        <div class="stored-passwords">
+            <div class="top">
+                <h2>list of stored passwords</h2>
+                <button class="closeBtn">close</button>
+            </div>
+            <div class="list-items">
+            
+            </div>
+        </div>
+        <div class="deleted-passwords">
+            <div class="top">
+                <h2>list of deleted passwords</h2>
+                <button class="closeBtn">close</button>
+            </div>
+            <div class="d-list-items">
+              
+            </div>
+        </div>
+        <div class="card-passwords">
+            <div class="top">
+                <h2>list of card passwords</h2>
+                <button class="closeBtn">close</button>
+            </div>
+            <div class="c-list-items">
+              
+            </div>
+        </div>
+
+        <div class="error-message">
+            <div class="top">
+                <h1>Information</h1>
+              
+            </div>
+            <div class="message">
+                <p class="message-text"></p>
+            </div>
+
+            <button class="okk">ok</button>
+
+        </div>
+
+        <div class="deletingMessage">
+            <div class="top">
+                <h1>Information</h1>
+                <button class="back">back</button>
+              
+            </div>
+            <div class="message">
+                <p class="messagePara">Are you sure, please to press confirm to comfirm your request</p>
+            </div>
+            <button class="conf">Comfirm</button>
+
+        </div>
+ 
+
+
+    
+    </div>
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
