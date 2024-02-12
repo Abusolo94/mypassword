@@ -45,8 +45,9 @@ const notificationBody = document.querySelector('.notifications')
 
 
 addBtn.addEventListener('click', ()=>{
-    if(siteInput.value === '' && passInput.value === "" && selectInput.value===""){
+    if(siteInput.value === '' || passInput.value === "" || selectInput.value===""){
         error("all input field are required")
+        return
     }
     else if(selectInput.value === "site" || selectInput.value === "device" && selectInput.value != 'card' ){
         addItemsToStored()
@@ -175,6 +176,7 @@ function addItemsToStored(){
                     </div>
                     <div class="btns">
                         <button id="show">Show</button>
+                      
                         <button class="del" id="delete">Delete</button>
                     </div>
                 </li>
@@ -186,9 +188,16 @@ function addItemsToStored(){
 
 storedList.addEventListener('click', (e)=>{
     if(e.target.id ==='delete'){
-        e.target.parentElement.parentElement.remove()
         deletedCount++
         storedCount--
+        e.target.parentElement.parentElement.remove()
+       
+
+        if(storedCount <= 0 ){
+            storedNote.textContent = '0'
+            return
+          
+        }
         showingNotications()
         let iditem = e.target.parentElement.parentElement.children[0].children[0].innerText
         let web = e.target.parentElement.parentElement.children[0].children[1].innerText
@@ -207,6 +216,18 @@ storedList.addEventListener('click', (e)=>{
         storeData()
        
     }
+    if(e.target.id === 'show'){
+        functionNotAvailable("Sorry this function currently unavailable")
+        
+      
+     
+        storeData()
+    }
+    if(e.target.id === 'edit'){
+        functionNotAvailable("Sorry this function currently unavailable")
+     
+        storeData()
+    }
 
 })
 
@@ -215,6 +236,17 @@ cardList.addEventListener('click', (e)=>{
         e.target.parentElement.parentElement.remove()
         deletedCount++
         cardCount--
+        newCount--
+        if(cardCount <= 0){
+
+            cardNote.textContent = '0'
+            
+        }
+        if(newCount <= 0){
+
+            newNote.textContent = '0'
+           
+        }
         showingNotications()
         let iditem = e.target.parentElement.parentElement.children[0].children[0].innerText
         let web = e.target.parentElement.parentElement.children[0].children[1].innerText
@@ -232,6 +264,11 @@ cardList.addEventListener('click', (e)=>{
         renderingDeletedItem(deletes)
         storeData()
        
+    }
+    if(e.target.id === 'show'){
+        functionNotAvailable("Sorry this function currently unavailable")
+     
+        storeData()
     }
 
 
@@ -253,22 +290,6 @@ function renderingDeletedItem(rand){
         <button class="rem" id="remove">Delete</button>
     </div>
 
-
-
-    <div class="deletingMessage">
-    <div class="top">
-        <h1>Information</h1>
-        <button class="back">back</button>
-      
-    </div>
-    <div class="message">
-        <p class="messagePara">Are you sure, please to press confirm to comfirm your request</p>
-    </div>
-    <button class="conf">Comfirm</button>
-
-</div>
-</li>
-    
     `
 
     deleteList.insertAdjacentHTML('beforeend', item)
@@ -276,14 +297,29 @@ function renderingDeletedItem(rand){
 }
 
     deleteList.addEventListener( "click", (e)=>{
+     
 
         if(e.target.id === 'remove'){
             deletedCount--
+            newCount--
             e.target.parentElement.parentElement.remove()
             // deletingComfirmation('This will parmently delete your imformation')
          
             storeData()
         }
+        if(e.target.id === 'restore'){
+            functionNotAvailable("Sorry this function currently unavailable")
+            
+          
+         
+            storeData()
+        }
+        if(e.target.id === 'potroy'){
+            functionNotAvailable("Sorry this function currently unavailable")
+         
+            storeData()
+        }
+      
        
     
     })
@@ -292,6 +328,8 @@ function renderingDeletedItem(rand){
 
 const errorOk = document.querySelector('.okk')
 const errorBody = document.querySelector('.error-message')
+
+
 function error(messege){
     
     const messageText = document.querySelector('.message-text')
@@ -308,27 +346,34 @@ function error(messege){
 errorOk.addEventListener('click', ()=>{
     errorBody.classList.remove('active')
 })
+
+
 const deletingBody = document.querySelector('.deletingMessage')
 const backBtn = document.querySelector('.back')
 const confirmBtn = document.querySelector('.conf')
 
-function deletingComfirmation(errormessage){
+function functionNotAvailable(errormessage){
     const deleteMess  = document.querySelector('.messagePara')
     deletingBody.classList.add('active')
     deleteMess.textContent = errormessage
     
 }
 
+
 backBtn.addEventListener('click', ()=>{
     deletingBody.classList.remove('active')
 
 })
 confirmBtn.addEventListener('click', ()=>{
+    deletingBody.classList.remove('active')
 
 
 
 })
- 
+  const mydolistBtn = document.getElementById('mydolist')
+  mydolistBtn.addEventListener('click', ()=>{
+    functionNotAvailable('This is another project underway')
+  })
 
 
 

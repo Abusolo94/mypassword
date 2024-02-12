@@ -129,6 +129,10 @@ body{
 .functional-btns button:hover{
     transform: scale(1.1)translate(2px);
 }
+.functional-btns button:nth-child(4){
+    background: gray;
+    margin-top: 4rem;
+}
 
 .stored-passwords, .deleted-passwords, .card-passwords {
     position: absolute;
@@ -171,6 +175,8 @@ body{
     margin-top: 10px;
     padding: 10px;
     height: 90%;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 .list-items li, .d-list-items li, .c-list-items li {
     display: flex;
@@ -297,12 +303,8 @@ body{
     display: block;
     display: flex;
 }
-li{
-    position: relative;
-}
-li.active{
-    background: rgb(165, 205, 230) ;
-}
+
+
 .deletingMessage .top{
     width: 100%;
     display: flex;
@@ -334,50 +336,68 @@ li.active{
     padding: 5px 20px;
     border-radius: 10px;
 }
-@media screen and   (max-width: 320px){
-       .main-container{
-        background: red;
-    }
+@media screen and   (max-width:550px){
+   
     .input-feilds{
         display: flex;
         flex-direction: column;
-        align-items: center;
-       justify-content: center;
+      
+     
+   
     }
-    .notifications{
+    .input-feilds div{
         display: flex;
-        align-items: center;
-        margin: 0 0 5px 0;
-        border: 1px solid white;
-        padding: 10px;
-        border-radius: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+    .input-feilds input{
+        width: 1fr;
+    }
+  
+    .notifications{
+        padding: 5px;
+     
+    }
+    .notifications p{
+        margin-right: 2px;
     }
     .functional-btns{
-     
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+     
+       
     }
+    .functional-btns button{
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        font-size: 17px;
+    }
+
     .stored-passwords, .deleted-passwords, .card-passwords {
         position: absolute;
         background: hsl(0, 4%, 25%);
         padding: 10px;
-        width: 250px;
+        width: 100%;
         border-radius: 10px;
-        height: 250px;
+        height: 350px;
         display: none;
+      
     
     }
 }
 
 
 
-@media  screen and (min-width:499px) {
+/* @media  screen and (max-width:499px) {
 
-    /* .main-container{
+     .main-container{
         background: blue;
-    } */
+    } 
     .input-feilds{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -413,14 +433,15 @@ li.active{
     }
 
     
-}
+} 
+
 
 
 @media  screen and (min-width:768px) {
-/* 
+
     .main-container{
         background: red;
-    } */
+    }
 
     
-}
+} */
